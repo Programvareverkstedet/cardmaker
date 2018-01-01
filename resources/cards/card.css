@@ -111,12 +111,8 @@ article figure >* {
     color: var(--color-figure);
     position: absolute;
     top:0;right:0;left:0;bottom:0;
-}
-article figure img {
-    padding: 1mm 0;
-    display: block;
-    height: calc(100% - 2mm);
     margin: auto auto;
+    height:100%;
 }
 article figure img.svg_filter{
     /*causes DPI issues when printing*/

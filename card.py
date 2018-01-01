@@ -2,13 +2,15 @@
 import glob, os
 from yaml import load, dump
 from common import Model
+from figure import Figure
 import config
 
 class Card(Model):
     filename = ""#filename without extentions
     title = "title"
-    figure = "code"
+    figure = ["code"]
     figure_source = "material-icons"
+    figure_parsed = []
         #material-icons = https://material.io/icons/
         #mdi            = https://materialdesignicons.com/
         #fa             = http://fontawesome.io/icons/
@@ -54,12 +56,13 @@ def from_yaml(data, filename="from_yaml"):
     card.filename = filename
     for key, val in load(data).items():
         setattr(card, key, val)
+    setattr(card, "figure_parsed", [Figure(line, getattr(card, "figure_source")) for line in getattr(card, "figure")])
     return card
 
 def to_yaml(card):
     out = {}
     for key in dir(card):
-        if "_" not in key[0] and key not in ("filename","has_flag"):
+        if "_" not in key[0] and key not in ("filename","has_flag","figure_parsed"):
             val = getattr(card, key)
             if (val or val==0) and val != getattr(Card, key):
                 out[key] = val
@@ -80,6 +83,7 @@ def from_form(form):#sanic's request.form
             setattr(card, key, val)
         else:
             setattr(card, key, val[0].strip().replace("\r\n", "\n"))
+    setattr(card, "figure_parsed", [Figure(line, getattr(card, "figure_source")) for line in getattr(card, "figure")])
     return card
 
 def is_filename_vacant(filename, in_carddir=True):
