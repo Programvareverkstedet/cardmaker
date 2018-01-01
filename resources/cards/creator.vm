@@ -30,7 +30,7 @@
                     <br>Rotation: x deg
                     <br>Scale: x % <small>(Leave blank for auto)</small>
                     <br>Source: svg, mdi...
-                    <br><br><small>NOTE: svg source required for attributes other than rotation!</small>
+                    <br><br><small>NOTE: svg source required for scaling!</small>
 
                 </div>
             </i>

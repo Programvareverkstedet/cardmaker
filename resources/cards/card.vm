@@ -31,16 +31,14 @@
 #end
 #macro(figure_style $fig)
 style="
+    top:${fig.top}px;
+    right:${fig.right}px;
+    bottom:${fig.bottom}px;
+    left:${fig.left}px;
     #if($fig.source == "svg") ## Unsupported with other sources due to being fonts, not images **
         #if($fig.autoscale)
-            top:${fig.top}px;
-            right:${fig.right}px;
-            bottom:${fig.bottom}px;
-            left:${fig.left}px;
             height:calc(100% - ${fig.size}px);
         #else
-            top:calc(${fig.top}px - ${fig.bottom}px);
-            left:calc(${fig.left}px - ${fig.right}px);
             height:${fig.scale}%;
         #end
     #end
