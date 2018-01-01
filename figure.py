@@ -7,9 +7,9 @@ class Figure(Model):
         # mdi            = https://materialdesignicons.com/
         # fa             = http://fontawesome.io/icons/
         # svg            = the svgs/ folder
-    color = ""
-    top = 0
-    bottom = 0
+    color = "aaa"
+    top = 4
+    bottom = 4
     left = 0
     right = 0
     size = 0
