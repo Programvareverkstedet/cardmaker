@@ -1,15 +1,15 @@
-# cardmaker
+# Cardmaker
 
 This is a simple cardmaker i made for our homebrew tabletop RPG. It is a simple webserver running locally, allowing you to make and manage your card deck. It uses *sanic+uvloop* to serve http, *airspeed* to render velocity templates and pyYAML to store and parse the cards.
 
-## dependencies:
+## Dependencies:
 
 This requires python 3.6 or newer, and could perhaps be reworked into working with python 3.5.
 The required python dependencies are listed in requirements.txt:
 
     pip install -r requirements.txt
 
-## running the server
+## Running the server
 
 If you have a working install of [entr](http://entrproject.org/), then you can start the server running:
 
@@ -23,6 +23,6 @@ If can otherwise run the server using
 
 When the server is running, you should be able to access it at [localhost:8000](http://localhost:8000)
 
-## Lisence
+## License
 
-This is release under BSD 3-clause license, see the file LICENSE for more information
+This is released under BSD 3-clause license, see the file LICENSE for more information
