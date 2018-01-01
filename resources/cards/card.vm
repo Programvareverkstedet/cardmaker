@@ -41,6 +41,9 @@ style="
         #else
             height:${fig.scale}%;
         #end
+    #elseif($fig.color)
+        #set($H = "#") ## Easiest way to escape the # character **
+        color: ${H}${fig.color};
     #end
 transform:rotate(${fig.rotate}deg)"
 #end
@@ -98,9 +101,9 @@ transform:rotate(${fig.rotate}deg)"
 #end
 
 #if($card_is_item)
-<article id="$escape_html($card.filename)" #if class="item" onclick="location.href='creator?filename=$escape_html($card.filename)'">
+<article id="$escape_html($card.filename)" class="item" onclick="location.href='creator?filename=$escape_html($card.filename)'">
 #elseif($card.effects)
-<article id="$escape_html($card.filename)" #if class="effects" onclick="location.href='creator?filename=$escape_html($card.filename)'">
+<article id="$escape_html($card.filename)" class="effects" onclick="location.href='creator?filename=$escape_html($card.filename)'">
 #else
 <article id="$escape_html($card.filename)" onclick="location.href='creator?filename=$escape_html($card.filename)'">
 #end
