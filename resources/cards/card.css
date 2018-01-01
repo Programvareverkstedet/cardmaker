@@ -200,6 +200,10 @@ article main {
     grid-area: info;
     position: relative;
     font-size: 0.9em;
+    display:grid;
+    grid-template-areas:"top"
+    "bottom";
+    grid-template-rows: auto min-content;
 }
 article main ol {
     margin-top: 1mm;
@@ -214,13 +218,11 @@ article.item main ul {
 }
 article main big{
     font-size: 1.65em;
+    line-height: 1em;
 }
 article main .bottom {
-    width: 100%;
-    position: absolute;
+    grid-area: bottom;
     line-height: 1.1em;
-    bottom: 1mm;
-    left: 0;
 }
 
 center.message {

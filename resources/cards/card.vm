@@ -142,6 +142,7 @@ transform:rotate(${fig.rotate}deg)"
     </section>
     
     <main>
+        <div class="top">
         $escape_html($card.description)
         #if($card.steps)
             <ol>
@@ -155,6 +156,7 @@ transform:rotate(${fig.rotate}deg)"
         #if($card.effects && $card_is_item)
             #effectList($card.effects)
         #end
+        </div>
         #if($card.flags)
             <div class="bottom">
                 <small>
