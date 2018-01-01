@@ -12,7 +12,7 @@
 #macro(figure_embed $fig)
     #if($fig.source == "material-icons")
     <!--https://material.io/icons/-->
-    <i class="material-icons figure" #figure_style($fig)>$escape_html($label)</i>
+    <i class="material-icons figure" #figure_style($fig)>$escape_html($fig.filename)</i>
     #elseif($fig.source == "mdi")
     <!--https://materialdesignicons.com/-->
     <i class="mdi mdi-$escape_html($fig.filename)" #figure_style($fig)></i>
